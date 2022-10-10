@@ -21,37 +21,37 @@ model User {
   phone       String
 }
 
-model Obra {
-  id               Int    @id @default(autoincrement())
-  classificacao    String
-  tipo_documental  String
-  autor            String
-  titulo           String
-  ano              Int
-  local_publicacao String
-  editor           String
-  edicao           Int
-  idioma           String
-  paginas          Int
-  descritores      String
-  registro         String
+model Book {
+  id             Int    @id @default(autoincrement())
+  classification String
+  doc_type       String
+  author         String
+  title          String
+  year           Int
+  published_at   String
+  editor         String
+  edition        Int
+  language       String
+  pages          Int
+  descritptors   String
+  registry       String
 }
 
-model Emprestimo {
+model Loan {
   id               Int      @id @default(autoincrement())
-  id_transacao     String
-  nome_funcionario String
-  nome_usuario     String
-  registro_obra1   String
-  registro_obra2   String
-  registro_obra3   String
-  registro_obra4   String
-  registro_obra5   String
-  data_emprestimo  DateTime @default(now())
-  data_prevista    DateTime
-  data_devolucao1  DateTime
-  data_devolucao2  DateTime
-  data_devolucao3  DateTime
-  data_devolucao4  DateTime
-  data_devolucao5  DateTime
+  transaction_id   String
+  worker_name      String
+  user_name        String
+  book_registry1   String
+  book_registry2   String
+  book_registry3   String
+  book_registry4   String
+  book_registry5   String
+  book_date        DateTime @default(now())
+  foreseen_date    DateTime // data prevista   ???????
+  devolution_date1 DateTime
+  devolution_date2 DateTime
+  devolution_date3 DateTime
+  devolution_date4 DateTime
+  devolution_date5 DateTime
 }

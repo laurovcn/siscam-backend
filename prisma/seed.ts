@@ -9,6 +9,12 @@ async function main() {
   const user1 = await prisma.user.create({
     data: {
       name: 'lvneto',
+      cpf: 'cpf',
+      department: 'department',
+      email: 'email@email',
+      inscription: 'iscription',
+      password: 'password',
+      phone: 'phone',
     },
   });
 

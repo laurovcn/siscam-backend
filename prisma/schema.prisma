@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
   output   = "../node_modules/.prisma/client"
@@ -12,8 +9,49 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          Int      @id @default(autoincrement())
+  name        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  cpf         String
+  department  String
+  email       String   @unique
+  inscription String
+  password    String
+  phone       String
+}
+
+model Obra {
+  id               Int    @id @default(autoincrement())
+  classificacao    String
+  tipo_documental  String
+  autor            String
+  titulo           String
+  ano              Int
+  local_publicacao String
+  editor           String
+  edicao           Int
+  idioma           String
+  paginas          Int
+  descritores      String
+  registro         String
+}
+
+model Emprestimo {
+  id               Int      @id @default(autoincrement())
+  id_transacao     String
+  nome_funcionario String
+  nome_usuario     String
+  registro_obra1   String
+  registro_obra2   String
+  registro_obra3   String
+  registro_obra4   String
+  registro_obra5   String
+  data_emprestimo  DateTime @default(now())
+  data_prevista    DateTime
+  data_devolucao1  DateTime
+  data_devolucao2  DateTime
+  data_devolucao3  DateTime
+  data_devolucao4  DateTime
+  data_devolucao5  DateTime
 }

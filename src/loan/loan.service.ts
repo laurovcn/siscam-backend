@@ -33,4 +33,5 @@ export class LoanService {
     return this.prisma.loan.delete({
       where: { id },
     });
-}
+ }
+ }
